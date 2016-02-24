@@ -50,9 +50,6 @@ public class GlassState implements Iterable<Glass> {
         if (this.glasses.size() != g.glasses.size()) {
             return false;
         }
-        if (this == g) {
-            return true;
-        }
         return this.glasses.containsAll(g.glasses)
                 && g.glasses.containsAll(this.glasses);
     }

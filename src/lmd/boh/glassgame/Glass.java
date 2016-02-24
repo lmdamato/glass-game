@@ -97,7 +97,7 @@ public class Glass {
         Set<Glass> res = new HashSet<Glass>();
 
         if (h.getContent() == h.getMaxCapacity()
-        || g.getContent() == 0) {
+            || g.getContent() == 0) {
             res.add(g);
             res.add(h);
             return res;
