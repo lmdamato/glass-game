@@ -96,18 +96,16 @@ public class Glass {
 
         Set<Glass> res = new HashSet<Glass>();
 
-        if (h.getContent() == h.getMaxCapacity()
-            || g.getContent() == 0) {
+        if (h.content == h.maxCapacity || g.content == 0) {
             res.add(g);
             res.add(h);
             return res;
         }
 
-        int q = Math.min(g.getContent(),
-        h.getMaxCapacity() - h.getContent());
+        int q = Math.min(g.content, h.maxCapacity - h.content);
 
-        res.add(new Glass(h.getMaxCapacity(), h.getContent() + q));
-        res.add(new Glass(g.getMaxCapacity(), g.getContent() - q));
+        res.add(new Glass(h.maxCapacity, h.content + q));
+        res.add(new Glass(g.maxCapacity, g.content - q));
 
         return res;
     }
@@ -127,7 +125,7 @@ public class Glass {
         }
         Glass g = (Glass) o;
         return this.maxCapacity == g.maxCapacity
-        && this.content == g.content;
+                && this.content == g.content;
     }
 
     /*

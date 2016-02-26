@@ -18,7 +18,7 @@ public class Solver {
      * Helper inner class to keep track of the steps.
      * @author Luigi Maria Damato
      */
-    private final class Node {
+    private static class Node {
         /**
          * The current state
          */
@@ -205,8 +205,10 @@ public class Solver {
      */
     public static final void main(String... args) {
         int[] capacities = { 4, 9, 17, 51 };
+        long time = System.currentTimeMillis();
         Solver s = new Solver(41, capacities);
-
-        System.out.println(s.result());
+        time = System.currentTimeMillis() - time;
+        
+        System.out.println(s.result() + "\n\nTime: " + time);
     }
 }
